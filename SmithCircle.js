@@ -29,7 +29,7 @@ function displayResult(e){
     var l=Math.sqrt(axis_y*axis_y+(1-axis_x)*(1-axis_x));
     var cos = (1-axis_x)/l;
     var sin = axis_y/l;
-    var x = Math.round(1/(2*sin)*10000)/10000;
+    var x = Math.round(l/(2*sin)*10000)/10000;
     var r = Math.round(l/(2*cos)*10000)/10000;
     document.getElementById("information").innerHTML="Gamar:" + axis_x + "<br>Gamai:" + axis_y + "<br>r:" + r+"<br>x:" + x;
 }

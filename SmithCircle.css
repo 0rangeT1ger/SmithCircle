@@ -24,6 +24,7 @@ blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{con
     background-color: #dddddd;
 }
 .information{
+    padding: 10px;
     color: #eeeeee;
     position: relative;
     float: left;
