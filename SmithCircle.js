@@ -13,6 +13,9 @@ canvas_instance.lineWidth=2;
 canvas_instance.moveTo(0,250);
 canvas_instance.lineTo(500,250);
 canvas_instance.stroke();
+canvas_instance.moveTo(250,0);
+canvas_instance.lineTo(250,500);
+canvas_instance.stroke();
 canvas_instance.circle(250,250,250);
 for(var i = 10; i<250; i+=20){
     canvas_instance.lineWidth=1;
@@ -29,7 +32,12 @@ function displayResult(e){
     var l=Math.sqrt(axis_y*axis_y+(1-axis_x)*(1-axis_x));
     var cos = (1-axis_x)/l;
     var sin = axis_y/l;
-    var x = Math.round(l/(2*sin)*10000)/10000;
-    var r = Math.round(l/(2*cos)*10000)/10000;
-    document.getElementById("information").innerHTML="Gamar:" + axis_x + "<br>Gamai:" + axis_y + "<br>r:" + r+"<br>x:" + x;
+    var r = l/(2*cos)*250;
+    var x = l/(2*sin)*250;
+    var x_minified = Math.round(l/(2*sin)*10000)/10000;
+    var r_minified = Math.round(l/(2*cos)*10000)/10000;
+    canvas_instance.strokeStyle = "red";
+    canvas_instance.circle(500-r,250,r);
+    canvas_instance.circle(500,Math.abs(250-x),Math.abs(x));
+    document.getElementById("information").innerHTML="Gamar:" + axis_x + "<br>Gamai:" + axis_y + "<br>r:" + r_minified +"<br>x:" + x_minified;
 }
